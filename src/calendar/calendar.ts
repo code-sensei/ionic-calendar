@@ -11,7 +11,7 @@ import * as _ from "lodash";
                 <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
             </ion-col>
             <ion-col col-auto>
-                <div>{{displayYear}} - {{displayMonth + 1 | monthName:lang}}</div>
+                <div>{{displayMonth + 1 | monthName:lang}}</div>
             </ion-col>
             <ion-col col-auto (click)="forward()">
                 <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
@@ -53,7 +53,7 @@ export class Calendar {
     weekArray = []; // Array for each row of the calendar
     lastSelect: number = 0; // Record the last clicked location
 
-    weekHead: number[] = [0,1,2,3,4,5,6];
+    weekHead: string[] = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
     constructor() {
       this.today();
@@ -304,4 +304,5 @@ interface dateObj {
     hasEvent?: boolean,
     onClick?: any,
     eventCSS?: string,
+    offer ?: any
 }
